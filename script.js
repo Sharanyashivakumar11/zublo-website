@@ -18,21 +18,61 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Contact form handling
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    const formMessage = document.getElementById('formMessage');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        // Get form data
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
+        // Disable submit button and show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        formMessage.style.display = 'none';
         
-        // Here you would typically send the data to a server
-        console.log('Form submitted:', data);
-        
-        // Show success message
-        alert('Thank you for your message! We will get back to you within 24 hours.');
-        
-        // Reset form
-        this.reset();
+        try {
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Send form data as JSON (required for Google Apps Script)
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            });
+            
+            const data = await response.json();
+            
+            if (response.ok && data.success) {
+                // Show success message
+                formMessage.textContent = 'Thank you for your message! We will get back to you within 24 hours.';
+                formMessage.className = 'form-message form-message-success';
+                formMessage.style.display = 'block';
+                
+                // Reset form
+                this.reset();
+                
+                // Scroll to message
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            } else {
+                throw new Error(data.error || data.message || 'Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            // Show error message
+            formMessage.textContent = error.message || 'There was an error sending your message. Please try again or contact us directly at hello@smartermarketing.com';
+            formMessage.className = 'form-message form-message-error';
+            formMessage.style.display = 'block';
+            
+            // Scroll to message
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } finally {
+            // Re-enable submit button
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Message';
+        }
     });
 }
 

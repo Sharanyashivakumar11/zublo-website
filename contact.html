@@ -65,7 +65,8 @@
                 <div class="contact-form-container">
                     <h2>Get a Quote</h2>
                     <p style="margin-bottom: 32px; color: var(--ink-black);">Tell us about your project and we'll get back to you within 24 hours.</p>
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" id="contactForm" action="https://script.google.com/macros/s/AKfycbwIiLX0i0ybqBGjIHBUKgAMJhmC-083XFUmoOcAUS5waNSBkNOUMaM9Peblg45yQGq3/exec" method="POST">
+                        <div id="formMessage" class="form-message" style="display: none;"></div>
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -98,7 +99,7 @@
                             <label for="message">Tell us about your project *</label>
                             <textarea id="message" name="message" rows="6" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
                     </form>
                 </div>
                 <div class="contact-info">

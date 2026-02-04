@@ -808,6 +808,18 @@ img {
     transform: rotate(5deg);
 }
 
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: 8px 8px 0 0 var(--ink-black) !important;
+}
+
+.btn-primary:disabled:hover {
+    transform: none !important;
+    box-shadow: 8px 8px 0 0 var(--ink-black) !important;
+}
+
 .btn-secondary {
     background-color: var(--warm-off-white);
     color: var(--ink-black);
@@ -1977,6 +1989,26 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+.form-message {
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    border: 3px solid var(--ink-black);
+    box-shadow: 4px 4px 0 0 var(--ink-black);
+}
+
+.form-message-success {
+    background-color: var(--accent-lime);
+    color: var(--ink-black);
+}
+
+.form-message-error {
+    background-color: #ffebee;
+    color: #c62828;
+    border-color: #c62828;
 }
 
 .form-group {
