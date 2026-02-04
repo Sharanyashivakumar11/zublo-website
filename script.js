@@ -22,7 +22,7 @@ if (contactForm) {
     const submitBtn = document.getElementById('submitBtn');
     
     // Google Apps Script URL
-    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwIiLX0i0ybqBGjIHBUKgAMJhmC-083XFUmoOcAUS5waNSBkNOUMaM9Peblg45yQGq3/exec';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzBiQ5xOsdJigvDHpUgcOFXHGHERn-n5OVWjJf9AqSGgxxCzjHo-HvCh_4jDEBwro4r/exec';
     
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();

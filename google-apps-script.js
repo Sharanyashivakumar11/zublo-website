@@ -23,7 +23,7 @@
 // Update these values:
 
 // Your email address where you want to receive form submissions
-const RECIPIENT_EMAIL = 'hello@smartermarketing.com';
+const RECIPIENT_EMAIL = 'contact@zublo.co';
 
 // Your Google Sheet ID (found in the Sheet URL: https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/edit)
 // Leave empty to create a new sheet automatically
@@ -53,15 +53,32 @@ function doGet(e) {
  */
 function doPost(e) {
   try {
-    let formData;
+    let formData = {};
     
     // Handle both JSON and URL-encoded form data
-    const contentType = e.postData.type || '';
-    if (contentType.includes('application/json')) {
-      // JSON data
-      formData = JSON.parse(e.postData.contents);
-    } else {
-      // URL-encoded data (fallback)
+    if (e.postData && e.postData.contents) {
+      const contentType = e.postData.type || '';
+      if (contentType.includes('application/json')) {
+        // JSON data
+        try {
+          formData = JSON.parse(e.postData.contents);
+        } catch (parseError) {
+          throw new Error('Failed to parse JSON: ' + parseError.toString());
+        }
+      } else {
+        // URL-encoded data (fallback)
+        const params = e.parameter || {};
+        formData = {
+          name: params.name || '',
+          email: params.email || '',
+          phone: params.phone || '',
+          business: params.business || '',
+          service: params.service || '',
+          message: params.message || ''
+        };
+      }
+    } else if (e.parameter) {
+      // Direct parameter access (for URL-encoded forms)
       const params = e.parameter;
       formData = {
         name: params.name || '',
@@ -71,9 +88,11 @@ function doPost(e) {
         service: params.service || '',
         message: params.message || ''
       };
+    } else {
+      throw new Error('No form data received');
     }
     
-    // Extract form fields
+    // Extract form fields with validation
     const name = formData.name || '';
     const email = formData.email || '';
     const phone = formData.phone || '';
@@ -225,8 +244,10 @@ function testSetup() {
   
   const mockEvent = {
     postData: {
+      type: 'application/json',
       contents: JSON.stringify(testData)
-    }
+    },
+    parameter: {}
   };
   
   const result = doPost(mockEvent);
