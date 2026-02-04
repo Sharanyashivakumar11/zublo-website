@@ -55,14 +55,23 @@ function doPost(e) {
   try {
     let formData = {};
     
+    // Log what we received for debugging
+    Logger.log('e.postData: ' + JSON.stringify(e.postData));
+    Logger.log('e.parameter: ' + JSON.stringify(e.parameter));
+    
     // Handle both JSON and URL-encoded form data
     if (e.postData && e.postData.contents) {
       const contentType = e.postData.type || '';
-      if (contentType.includes('application/json')) {
+      Logger.log('Content-Type: ' + contentType);
+      Logger.log('PostData contents: ' + e.postData.contents);
+      
+      if (contentType.includes('application/json') || e.postData.contents.trim().startsWith('{')) {
         // JSON data
         try {
           formData = JSON.parse(e.postData.contents);
+          Logger.log('Parsed JSON: ' + JSON.stringify(formData));
         } catch (parseError) {
+          Logger.log('JSON parse error: ' + parseError.toString());
           throw new Error('Failed to parse JSON: ' + parseError.toString());
         }
       } else {
@@ -76,6 +85,7 @@ function doPost(e) {
           service: params.service || '',
           message: params.message || ''
         };
+        Logger.log('Using URL-encoded params: ' + JSON.stringify(formData));
       }
     } else if (e.parameter) {
       // Direct parameter access (for URL-encoded forms)
