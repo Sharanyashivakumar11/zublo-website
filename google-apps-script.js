@@ -32,6 +32,9 @@ const SPREADSHEET_ID = '1sWQILGj4DDqzInW3MC0xpfcE-lSZ8j9qQQLr5FUHJEk';
 // Sheet name (tab name) where data will be saved
 const SHEET_NAME = 'Form Submissions';
 
+// Spreadsheet URL for email notifications
+const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/1sWQILGj4DDqzInW3MC0xpfcE-lSZ8j9qQQLr5FUHJEk/edit?gid=0#gid=0';
+
 // ========== MAIN FUNCTION ==========
 
 /**
@@ -227,6 +230,9 @@ ${message}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Submitted: ${new Date().toLocaleString()}
+
+View in Google Sheet:
+${SPREADSHEET_URL}
   `.trim();
   
   // Send email
