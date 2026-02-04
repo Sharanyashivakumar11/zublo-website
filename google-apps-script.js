@@ -267,11 +267,12 @@ function sendSMS(name, email, service, message) {
   }
   
   try {
-    const smsBody = `New form: ${name} - ${service}. ${message.substring(0, 100)}${message.length > 100 ? '...' : ''}`;
+    // Format SMS message (keep it short for SMS limits)
+    const smsBody = `New form submission:\n${name}\n${service}\n${message.substring(0, 80)}${message.length > 80 ? '...' : ''}`;
     
     MailApp.sendEmail({
       to: SMS_EMAIL_ADDRESS,
-      subject: '', // Some carriers require empty subject
+      subject: 'Form Submission', // Some carriers show this, some don't
       body: smsBody
     });
     
