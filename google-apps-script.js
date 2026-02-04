@@ -267,13 +267,15 @@ function sendSMS(name, email, service, message) {
   }
   
   try {
-    // Format SMS message (keep it short for SMS limits)
-    // Include spreadsheet link
-    const smsBody = `New form submission:\n${name}\n${service}\n${message.substring(0, 60)}${message.length > 60 ? '...' : ''}\n\nView: ${SPREADSHEET_URL}`;
+    // Format SMS message (keep it short for SMS limits - 160 chars max)
+    // Use shorter spreadsheet URL (without gid parameter)
+    const shortSheetUrl = 'https://docs.google.com/spreadsheets/d/1sWQILGj4DDqzInW3MC0xpfcE-lSZ8j9qQQLr5FUHJEk/edit';
+    const preview = message.substring(0, 40);
+    const smsBody = `New form:\n${name}\n${service}\n${preview}${message.length > 40 ? '...' : ''}\n\nSheet: ${shortSheetUrl}`;
     
     MailApp.sendEmail({
       to: SMS_EMAIL_ADDRESS,
-      subject: 'Form Submission', // Some carriers show this, some don't
+      subject: 'Form Submission',
       body: smsBody
     });
     
