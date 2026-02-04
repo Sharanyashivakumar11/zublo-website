@@ -35,6 +35,25 @@ const SHEET_NAME = 'Form Submissions';
 // Spreadsheet URL for email notifications
 const SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/1sWQILGj4DDqzInW3MC0xpfcE-lSZ8j9qQQLr5FUHJEk/edit?gid=0#gid=0';
 
+// ========== SMS/WHATSAPP CONFIGURATION ==========
+// Option 1: Twilio (Recommended - supports SMS and WhatsApp)
+// Get your credentials from https://www.twilio.com/
+const USE_TWILIO = false; // Set to true to enable Twilio
+const TWILIO_ACCOUNT_SID = 'YOUR_TWILIO_ACCOUNT_SID';
+const TWILIO_AUTH_TOKEN = 'YOUR_TWILIO_AUTH_TOKEN';
+const TWILIO_PHONE_NUMBER = 'YOUR_TWILIO_PHONE_NUMBER'; // Format: +1234567890
+const YOUR_PHONE_NUMBER = 'YOUR_PHONE_NUMBER'; // Format: +1234567890 (include country code)
+
+// Option 2: Email-to-SMS (Free but carrier-dependent)
+// Most carriers support email-to-SMS. Format: yournumber@carrier.com
+// Common carriers: 
+// - AT&T: number@txt.att.net
+// - Verizon: number@vtext.com
+// - T-Mobile: number@tmomail.net
+// - Sprint: number@messaging.sprintpcs.com
+const USE_EMAIL_SMS = true; // Set to true to enable email-to-SMS
+const SMS_EMAIL_ADDRESS = '2132680491@tmomail.net'; // T-Mobile format: number@tmomail.net (update with your number)
+
 // ========== MAIN FUNCTION ==========
 
 /**
@@ -130,6 +149,9 @@ function doPost(e) {
     
     // Send email notification
     sendEmail(name, email, phone, business, service, message);
+    
+    // Send SMS/WhatsApp notification
+    sendSMS(name, email, service, message);
     
     // Return success response
     return ContentService.createTextOutput(
@@ -242,6 +264,63 @@ ${SPREADSHEET_URL}
     body: emailBody,
     replyTo: email // Allows you to reply directly to the form submitter
   });
+}
+
+/**
+ * Sends SMS or WhatsApp notification
+ */
+function sendSMS(name, email, service, message) {
+  try {
+    if (USE_TWILIO) {
+      sendSMSViaTwilio(name, email, service, message);
+    } else if (USE_EMAIL_SMS) {
+      sendSMSViaEmail(name, email, service, message);
+    }
+  } catch (error) {
+    Logger.log('SMS sending error (non-critical): ' + error.toString());
+    // Don't throw - SMS is optional, don't fail the form submission if SMS fails
+  }
+}
+
+/**
+ * Sends SMS via Twilio (supports SMS and WhatsApp)
+ */
+function sendSMSViaTwilio(name, email, service, message) {
+  const smsBody = `New form submission:\n${name}\n${email}\n${service}\n\n${message.substring(0, 100)}${message.length > 100 ? '...' : ''}`;
+  
+  const url = `https://api.twilio.com/2010-04-01/Accounts/${TWILIO_ACCOUNT_SID}/Messages.json`;
+  
+  const payload = {
+    'From': TWILIO_PHONE_NUMBER,
+    'To': YOUR_PHONE_NUMBER,
+    'Body': smsBody
+  };
+  
+  const options = {
+    'method': 'post',
+    'headers': {
+      'Authorization': 'Basic ' + Utilities.base64Encode(TWILIO_ACCOUNT_SID + ':' + TWILIO_AUTH_TOKEN)
+    },
+    'payload': payload
+  };
+  
+  const response = UrlFetchApp.fetch(url, options);
+  Logger.log('Twilio SMS sent: ' + response.getContentText());
+}
+
+/**
+ * Sends SMS via Email-to-SMS gateway (free but carrier-dependent)
+ */
+function sendSMSViaEmail(name, email, service, message) {
+  const smsBody = `New form: ${name} - ${service}. ${message.substring(0, 100)}${message.length > 100 ? '...' : ''}`;
+  
+  MailApp.sendEmail({
+    to: SMS_EMAIL_ADDRESS,
+    subject: '', // Some carriers require empty subject
+    body: smsBody
+  });
+  
+  Logger.log('Email-to-SMS sent to: ' + SMS_EMAIL_ADDRESS);
 }
 
 /**
