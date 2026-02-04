@@ -148,24 +148,73 @@ document.querySelectorAll('.service-card, .pricing-card, .case-study-card, .test
     observer.observe(element);
 });
 
-// Dropdown menu functionality - static positioning only
+// Mobile menu toggle
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mainNav = document.getElementById('mainNav');
+if (mobileMenuToggle && mainNav) {
+    mobileMenuToggle.addEventListener('click', function() {
+        mobileMenuToggle.classList.toggle('active');
+        mainNav.classList.toggle('active');
+        document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+    });
+
+    // Close menu when clicking outside (but not when clicking dropdown items)
+    document.addEventListener('click', function(e) {
+        if (!mainNav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+            // Don't close if clicking inside a dropdown menu
+            const clickedDropdown = e.target.closest('.nav-dropdown');
+            if (!clickedDropdown) {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+    });
+
+    // Close menu when clicking a nav link (but not dropdown links)
+    mainNav.querySelectorAll('.nav-link').forEach(link => {
+        // Skip the dropdown link - it should toggle, not close
+        if (!link.classList.contains('nav-link-dropdown')) {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+    });
+}
+
+// Dropdown menu functionality
 const navDropdown = document.querySelector('.nav-dropdown');
 if (navDropdown) {
     const dropdownLink = navDropdown.querySelector('.nav-link-dropdown');
     const dropdownMenu = navDropdown.querySelector('.dropdown-menu');
     
-    // Toggle dropdown on click (for mobile)
-    dropdownLink.addEventListener('click', function(e) {
-        // Only prevent default on mobile/touch devices
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            navDropdown.classList.toggle('active');
-        }
-    });
+    // Function to check if mobile
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
     
-    // Close dropdown when clicking outside
+    // Toggle dropdown on click
+    if (dropdownLink) {
+        dropdownLink.addEventListener('click', function(e) {
+            // Always prevent default on mobile, allow navigation on desktop
+            if (isMobile()) {
+                e.preventDefault();
+                e.stopPropagation();
+                const isActive = navDropdown.classList.contains('active');
+                navDropdown.classList.toggle('active');
+                console.log('Services dropdown toggled. Active:', !isActive);
+                console.log('Dropdown menu element:', dropdownMenu);
+                console.log('Dropdown menu computed display:', window.getComputedStyle(dropdownMenu).display);
+                console.log('Nav dropdown classes:', navDropdown.className);
+            }
+        });
+    }
+    
+    // Close dropdown when clicking outside (only on mobile)
     document.addEventListener('click', function(e) {
-        if (!navDropdown.contains(e.target)) {
+        if (isMobile() && !navDropdown.contains(e.target)) {
             navDropdown.classList.remove('active');
         }
     });
@@ -179,16 +228,34 @@ if (navDropdown) {
         });
     }
     
-    // Ensure dropdown stays in place on hover (desktop)
-    if (window.innerWidth > 768) {
-        navDropdown.addEventListener('mouseenter', function() {
-            navDropdown.classList.add('active');
-        });
-        
-        navDropdown.addEventListener('mouseleave', function() {
-            navDropdown.classList.remove('active');
-        });
+    // Desktop hover behavior
+    function setupDesktopHover() {
+        if (isMobile()) {
+            navDropdown.removeEventListener('mouseenter', handleMouseEnter);
+            navDropdown.removeEventListener('mouseleave', handleMouseLeave);
+        } else {
+            navDropdown.addEventListener('mouseenter', handleMouseEnter);
+            navDropdown.addEventListener('mouseleave', handleMouseLeave);
+        }
     }
+    
+    function handleMouseEnter() {
+        navDropdown.classList.add('active');
+    }
+    
+    function handleMouseLeave() {
+        navDropdown.classList.remove('active');
+    }
+    
+    // Set up hover on load
+    setupDesktopHover();
+    
+    // Update on resize
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(setupDesktopHover, 100);
+    });
 }
 
 // Aperture Lens Follow - Advanced Cursor Tracking with Parallax
