@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATE Case Study | Smarter Marketing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .platforms-services-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Brush Elements SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <defs>
+            <path id="brush-underline-1" d="M0,8 Q50,4 100,6 T200,5 T300,7" stroke="currentColor" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </defs>
+    </svg>
+    <header class="header sticky">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo-link">
+                    <svg class="logo-img" width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="800" fill="#100908" letter-spacing="-0.5px">Z</text>
+                        <text x="18" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="600" fill="#100908" letter-spacing="-0.5px">ublo</text>
+                        <line x1="22" y1="34" x2="78" y2="34" stroke="#E57236" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="services.html" class="nav-link nav-link-dropdown">Services <span class="dropdown-arrow">▼</span></a>
+                        <div class="dropdown-menu">
+                            <a href="services.html#websites" class="dropdown-item">Websites</a>
+                            <a href="services.html#apps" class="dropdown-item">Apps</a>
+                            <a href="services.html#seo" class="dropdown-item">SEO</a>
+                            <a href="services.html#content" class="dropdown-item">Content Systems</a>
+                            <a href="services.html#white-label" class="dropdown-item">White-Label</a>
+                            <a href="services.html#campaigns" class="dropdown-item">Campaigns</a>
+                        </div>
+                    </div>
+                    <a href="work.html" class="nav-link">Work</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link cta-nav">Let's Talk</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <a href="work.html" class="back-link" style="position: fixed; top: 100px; left: 40px; z-index: 100; display: inline-flex; align-items: center; gap: 6px; color: var(--ink-black); text-decoration: none; font-weight: 400; font-size: 14px; opacity: 0.6; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">
+        ← Back
+    </a>
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">
+                E-Commerce Website for a Nut Butter & Granola Brand
+                <svg class="brush-underline brush-green" viewBox="0 0 300 20" preserveAspectRatio="none">
+                    <use href="#brush-underline-1"/>
+                </svg>
+            </h1>
+            <p style="font-size: 20px; margin-top: 20px; font-weight: 500; color: var(--ink-black);">Designing a modern, educational storefront built to convert Indian consumers</p>
+        </div>
+    </section>
+
+    <section class="case-study-detail" style="padding: 80px 0; background-color: var(--warm-off-white);">
+        <div class="container">
+            <div class="case-study-detail-content">
+                <!-- The Challenge Section -->
+                <div class="case-study-section">
+                    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 32px; color: var(--ink-black);">
+                        The Challenge
+                    </h2>
+                    <div class="case-study-box" style="background-color: var(--pink-lavender); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black); margin-bottom: 40px;">
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 24px;">
+                            ATE is a premium nut butter and granola brand built around clean ingredients, small-batch production, and everyday wellness.
+                        </p>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 24px; font-weight: 600;">
+                            But the client faced a key challenge:
+                        </p>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 24px;">
+                            In India, nut butters and granola are still emerging pantry categories — which means customers don't just need to buy…<br>
+                            <strong>They need to understand.</strong>
+                        </p>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 16px; font-weight: 600;">
+                            Many shoppers were asking:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px 0;">
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-orange); font-weight: 900;">•</span>
+                                How do I use this product daily?
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-orange); font-weight: 900;">•</span>
+                                What does it pair with?
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-orange); font-weight: 900;">•</span>
+                                Is it worth the premium price?
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 0; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-orange); font-weight: 900;">•</span>
+                                What makes it healthier or better than alternatives?
+                            </li>
+                        </ul>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin: 0; font-weight: 600;">
+                            The client needed more than a beautiful online store.<br>
+                            They needed a website that could build trust, educate quickly, and drive conversions.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Our Approach Section -->
+                <div class="case-study-section">
+                    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 32px; color: var(--ink-black);">
+                        Our Approach
+                    </h2>
+                    <div class="case-study-box" style="background-color: var(--sky-blue); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black); margin-bottom: 40px;">
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 24px;">
+                            We designed an e-commerce experience that blends:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px 0;">
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                minimal, modern design
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                warm, earthy brand tones
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                a youthful, playful visual energy that feels fresh and approachable
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                educational product storytelling
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 0; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                conversion-focused upsell and cross-sell systems
+                            </li>
+                        </ul>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin: 0; font-weight: 600;">
+                            The result is a storefront that feels premium yet fun — built to engage, build trust, and drive purchases.
+                        </p>
+                    </div>
+                    <h3 style="font-size: clamp(24px, 4vw, 36px); font-weight: 800; margin-top: 40px; margin-bottom: 24px; color: var(--ink-black);">
+                        The Design
+                    </h3>
+                    <div style="margin-top: 0; margin-bottom: 60px; border: var(--border-thick) solid var(--ink-black); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                        <video src="images/ate-design-video.mov" controls style="width: 100%; height: auto; display: block;">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Storytelling Beyond Products Section -->
+                <div class="case-study-section">
+                    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 32px; color: var(--ink-black);">
+                        Storytelling Beyond Products
+                    </h2>
+                    <div class="case-study-box" style="background-color: var(--warm-off-white); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black); margin-bottom: 40px;">
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 24px;">
+                            A key part of building trust in food brands is emotional connection — especially in premium categories.
+                        </p>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 24px; font-weight: 600;">
+                            So we made sure the website wasn't just transactional. It was founder-led and narrative-driven.
+                        </p>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 16px;">
+                            Even the About Us section was designed as a story — introducing the people behind the brand:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px 0;">
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--ink-black); font-weight: 900;">•</span>
+                                the founder's vision for creating better pantry staples
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--ink-black); font-weight: 900;">•</span>
+                                why ATE was built around small-batch, intentional production
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--ink-black); font-weight: 900;">•</span>
+                                the values that guide every ingredient choice
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 0; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--ink-black); font-weight: 900;">•</span>
+                                what makes this brand personal, not mass-manufactured
+                            </li>
+                        </ul>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin: 0; font-weight: 600;">
+                            This helped customers feel like they weren't just buying nut butter or granola…<br>
+                            They were buying from someone with a purpose — a brand they could trust, relate to, and support.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- The Key Solution Section -->
+                <div class="case-study-section">
+                    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 32px; color: var(--ink-black);">
+                        The Key Solution: Education as a Conversion Tool
+                    </h2>
+                    <div class="case-study-box" style="background-color: var(--accent-orange); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black); margin-bottom: 40px;">
+                        <p style="font-size: 18px; line-height: 1.8; color: white; margin-bottom: 24px; font-weight: 600;">
+                            A major insight in this project was:
+                        </p>
+                        <p style="font-size: 20px; line-height: 1.8; color: white; margin-bottom: 32px; font-weight: 700;">
+                            Customers won't purchase what they don't know how to use.
+                        </p>
+                        <p style="font-size: 18px; line-height: 1.8; color: white; margin-bottom: 24px; font-weight: 600;">
+                            So instead of building standard product pages, we created a shopping journey that actively teaches.
+                        </p>
+                        <h3 style="font-size: 24px; font-weight: 900; margin-bottom: 16px; color: white;">Recipe-Led Product Pages</h3>
+                        <p style="font-size: 18px; line-height: 1.8; color: white; margin-bottom: 16px;">
+                            We introduced a "Made With This" system across the site:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px 0;">
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                Made with this nut butter
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 0; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                Made with this granola
+                            </li>
+                        </ul>
+                        <p style="font-size: 18px; line-height: 1.8; color: white; margin-bottom: 16px;">
+                            This allows customers to instantly see:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px 0;">
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                how to pair the product
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                how to use it in real recipes
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 0; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                why it fits into everyday eating
+                            </li>
+                        </ul>
+                        <p style="font-size: 18px; line-height: 1.8; color: white; margin-bottom: 16px;">
+                            This not only increases purchase confidence — it also naturally supports:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                upselling
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                cross-selling
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 0; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                multi-jar orders
+                            </li>
+                        </ul>
+                        <p style="font-size: 18px; line-height: 1.8; color: white; margin-top: 24px; margin-bottom: 0; font-weight: 600;">
+                            Education became the growth engine.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Highlighting Trust Section -->
+                <div class="case-study-section">
+                    <h3 style="font-size: clamp(24px, 4vw, 36px); font-weight: 800; margin-top: 0; margin-bottom: 24px; color: var(--ink-black);">
+                        The Design
+                    </h3>
+                    <div style="margin-top: 0; margin-bottom: 40px; border: var(--border-thick) solid var(--ink-black); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                        <img src="images/ate-highlighting-trust.png" alt="The Design" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 32px; color: var(--ink-black);">
+                        Highlighting Trust: "Inside Every Jar"
+                    </h2>
+                    <div class="case-study-box" style="background-color: var(--sky-blue); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black); margin-bottom: 40px;">
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 24px;">
+                            For Indian consumers, transparency is essential — especially in premium food categories.
+                        </p>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 16px; font-weight: 600;">
+                            So we built a dedicated section to highlight:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                small-batch production
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                premium ingredients
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                no refined sugar
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 0; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                honest nutrition
+                            </li>
+                        </ul>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-top: 24px; margin-bottom: 0;">
+                            Instead of long paragraphs, we used clean callouts that build trust in seconds.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Outcome Section -->
+                <div class="case-study-section">
+                    <h3 style="font-size: clamp(24px, 4vw, 36px); font-weight: 800; margin-top: 0; margin-bottom: 24px; color: var(--ink-black);">
+                        The Design
+                    </h3>
+                    <div style="margin-top: 0; margin-bottom: 40px; border: var(--border-thick) solid var(--ink-black); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                        <img src="images/ate-outcome.png" alt="The Design" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 32px; color: var(--ink-black);">
+                        Outcome
+                    </h2>
+                    <div class="case-study-box" style="background-color: var(--accent-lime); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black); margin-bottom: 40px;">
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 24px;">
+                            The final storefront for ATE became more than an online shop.
+                        </p>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 16px; font-weight: 600;">
+                            It became a brand experience that:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 24px 0;">
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--deep-green); font-weight: 900;">•</span>
+                                introduces an emerging category with clarity
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--deep-green); font-weight: 900;">•</span>
+                                builds trust through ingredient storytelling
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--deep-green); font-weight: 900;">•</span>
+                                connects emotionally through founder narrative
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--deep-green); font-weight: 900;">•</span>
+                                educates customers through recipes
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 12px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--deep-green); font-weight: 900;">•</span>
+                                increases cart size through smart cross-sells
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 0; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--deep-green); font-weight: 900;">•</span>
+                                feels modern, joyful, and culturally relevant for India
+                            </li>
+                        </ul>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-top: 24px; margin-bottom: 0; font-weight: 600;">
+                            Most importantly, it was designed to convert — not just look good.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Platforms & Services -->
+                <div class="case-study-section platforms-services-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 60px;">
+                    <div class="case-study-box" style="background-color: var(--warm-off-white); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                        <h3 style="font-size: 24px; font-weight: 900; margin-bottom: 24px; color: var(--ink-black);">Platform</h3>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin: 0;">E-Commerce Website</p>
+                    </div>
+                    <div class="case-study-box" style="background-color: var(--warm-off-white); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                        <h3 style="font-size: 24px; font-weight: 900; margin-bottom: 24px; color: var(--ink-black);">Services</h3>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin: 0;">E-Commerce Design · Brand Direction · Product Storytelling · Conversion Optimization · Recipe-Led UX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to See Similar Results?</h2>
+            <p class="cta-subtitle">Let's build something great. Fast.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo-link">
+                    <svg class="logo-img" width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="800" fill="#100908" letter-spacing="-0.5px">Z</text>
+                        <text x="18" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="600" fill="#100908" letter-spacing="-0.5px">ublo</text>
+                        <line x1="22" y1="34" x2="78" y2="34" stroke="#E57236" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                    <p>Websites, apps, and growth systems for LA businesses.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="services.html#websites">Websites</a>
+                        <a href="services.html#apps">Apps</a>
+                        <a href="services.html#seo">SEO</a>
+                        <a href="services.html#content">Content</a>
+                        <a href="services.html#white-label">White-Label</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="work.html">Work</a>
+                        <a href="contact.html">Let's Talk</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Smarter Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

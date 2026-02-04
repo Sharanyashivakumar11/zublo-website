@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Smarter Marketing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Brush Elements SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <defs>
+            <path id="brush-underline-1" d="M0,8 Q50,4 100,6 T200,5 T300,7" stroke="currentColor" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path id="brush-highlight-1" d="M0,10 Q30,5 60,8 Q90,12 120,7 Q150,3 180,9" stroke="currentColor" stroke-width="20" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
+        </defs>
+    </svg>
+    <header class="header sticky">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo-link">
+                    <svg class="logo-img" width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="800" fill="#100908" letter-spacing="-0.5px">Z</text>
+                        <text x="18" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="600" fill="#100908" letter-spacing="-0.5px">ublo</text>
+                        <line x1="22" y1="34" x2="78" y2="34" stroke="#E57236" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="services.html" class="nav-link nav-link-dropdown">Services <span class="dropdown-arrow">▼</span></a>
+                        <div class="dropdown-menu">
+                            <a href="services.html#websites" class="dropdown-item">Websites</a>
+                            <a href="services.html#apps" class="dropdown-item">Apps</a>
+                            <a href="services.html#seo" class="dropdown-item">SEO</a>
+                            <a href="services.html#content" class="dropdown-item">Content Systems</a>
+                            <a href="services.html#white-label" class="dropdown-item">White-Label</a>
+                            <a href="services.html#campaigns" class="dropdown-item">Campaigns</a>
+                        </div>
+                    </div>
+                    <a href="work.html" class="nav-link">Work</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link cta-nav">Let's Talk</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">
+                What We Build
+                <svg class="brush-underline brush-orange" viewBox="0 0 300 20" preserveAspectRatio="none">
+                    <use href="#brush-underline-1"/>
+                </svg>
+            </h1>
+            <p style="font-size: 24px; margin-top: 20px; font-weight: 500;">Fast, affordable, quality digital solutions for LA businesses.</p>
+        </div>
+    </section>
+
+    <section class="services-detail" id="websites">
+        <div class="container">
+            <div class="service-detail-card">
+                <div class="service-detail-header">
+                    <div class="service-icon-large">🌐</div>
+                    <div class="service-title-wrapper">
+                        <h2>Websites</h2>
+                        <p class="service-subtitle">Your hardest-working salesperson</p>
+                    </div>
+                </div>
+                <div class="service-problem-solution">
+                    <div class="problem-box">
+                        <h3>The problem</h3>
+                        <p>Your website looks fine… but it's not converting. People visit, scroll, and leave.</p>
+                    </div>
+                    <div class="solution-box">
+                        <h3>Our solution</h3>
+                        <p>We design and build high-performing websites that do the talking, guiding, and convincing for you — even when you're offline.</p>
+                    </div>
+                </div>
+                <div class="service-features">
+                    <h3>What that means in real life</h3>
+                    <ul class="benefits-list">
+                        <li>Clear messaging that explains why you in seconds</li>
+                        <li>Design that feels intentional, never templated</li>
+                        <li>UX that gently nudges visitors to take action</li>
+                        <li>Built to scale, easy to update, and SEO-ready</li>
+                    </ul>
+                </div>
+                <div class="service-delivery">
+                    <p class="delivery-time">⚡ Delivered in as little as 15 days.</p>
+                    <p class="service-result">👉 Result: a site that doesn't just exist — it performs.</p>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-detail" id="apps" style="background-color: var(--sky-blue);">
+        <div class="container">
+            <div class="service-detail-card">
+                <div class="service-detail-header">
+                    <div class="service-icon-large">📱</div>
+                    <div class="service-title-wrapper">
+                        <h2>Apps</h2>
+                        <p class="service-subtitle">Turn ideas into usable products</p>
+                    </div>
+                </div>
+                <div class="service-problem-solution">
+                    <div class="problem-box">
+                        <h3>The problem</h3>
+                        <p>You have an idea, but turning it into a functional, user-friendly product feels overwhelming.</p>
+                    </div>
+                    <div class="solution-box">
+                        <h3>Our solution</h3>
+                        <p>We help you go from idea → MVP → usable product without overbuilding or overthinking.</p>
+                    </div>
+                </div>
+                <div class="service-features">
+                    <h3>What that means in real life</h3>
+                    <ul class="benefits-list">
+                        <li>Clear product scope and flows</li>
+                        <li>Clean, intuitive UX</li>
+                        <li>Scalable architecture from day one</li>
+                        <li>Smart use of tools to move faster without breaking things</li>
+                    </ul>
+                </div>
+                <div class="service-delivery">
+                    <p class="delivery-time">⚡ MVPs delivered in as little as 30 days.</p>
+                    <p class="service-result">👉 Result: an app people understand, use, and want to keep using.</p>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-detail" id="seo" style="background-color: var(--sky-blue);">
+        <div class="container">
+            <div class="service-detail-card">
+                <div class="service-detail-header">
+                    <div class="service-icon-large">🔍</div>
+                    <div class="service-title-wrapper">
+                        <h2>SEO</h2>
+                        <p class="service-subtitle">Quiet, compounding growth</p>
+                    </div>
+                </div>
+                <div class="service-problem-solution">
+                    <div class="problem-box">
+                        <h3>The problem</h3>
+                        <p>SEO feels slow, confusing, and hard to trust.</p>
+                    </div>
+                    <div class="solution-box">
+                        <h3>Our solution</h3>
+                        <p>We treat SEO as a long-term growth system, not a checklist.</p>
+                    </div>
+                </div>
+                <div class="service-features">
+                    <h3>What that means in real life</h3>
+                    <ul class="benefits-list">
+                        <li>Clear keyword and content strategy</li>
+                        <li>Technical foundations done right</li>
+                        <li>Content that answers real questions</li>
+                        <li>Measurable, steady progress</li>
+                    </ul>
+                </div>
+                <div class="service-delivery">
+                    <p class="delivery-time">⚡ SEO foundations set up in as little as 14 days.</p>
+                    <p class="service-result">👉 Result: visibility that grows quietly — and keeps growing.</p>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-detail" id="content" style="background-color: var(--pink-lavender);">
+        <div class="container">
+            <div class="service-detail-card">
+                <div class="service-detail-header">
+                    <div class="service-icon-large">📝</div>
+                    <div class="service-title-wrapper">
+                        <h2>Content</h2>
+                        <p class="service-subtitle">Say the right thing, clearly</p>
+                    </div>
+                </div>
+                <div class="service-problem-solution">
+                    <div class="problem-box">
+                        <h3>The problem</h3>
+                        <p>You know what you do, but explaining it clearly and consistently is hard.</p>
+                    </div>
+                    <div class="solution-box">
+                        <h3>Our solution</h3>
+                        <p>We create content that sounds like you on your best day — confident, human, and easy to understand.</p>
+                    </div>
+                </div>
+                <div class="service-features">
+                    <h3>What that means in real life</h3>
+                    <ul class="benefits-list">
+                        <li>Website copy that actually gets read</li>
+                        <li>Clear brand voice and messaging</li>
+                        <li>Content built for people and search</li>
+                        <li>Visual and written content that work together</li>
+                    </ul>
+                </div>
+                <div class="service-delivery">
+                    <p class="delivery-time">⚡ Core website messaging delivered in as little as 7 days.</p>
+                    <p class="service-result">👉 Result: content that connects and converts.</p>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-detail" id="white-label" style="background-color: var(--soft-blush);">
+        <div class="container">
+            <div class="service-detail-card">
+                <div class="service-detail-header">
+                    <div class="service-icon-large">🤝</div>
+                    <div class="service-title-wrapper">
+                        <h2>White Label</h2>
+                        <p class="service-subtitle">Scale without the growing pains</p>
+                    </div>
+                </div>
+                <div class="service-problem-solution">
+                    <div class="problem-box">
+                        <h3>The problem</h3>
+                        <p>You want to take on more work, but don't want to hire, manage, or burn out.</p>
+                    </div>
+                    <div class="solution-box">
+                        <h3>Our solution</h3>
+                        <p>We operate as your behind-the-scenes execution partner, delivering work under your brand.</p>
+                    </div>
+                </div>
+                <div class="service-features">
+                    <h3>What that means in real life</h3>
+                    <ul class="benefits-list">
+                        <li>You keep the client relationship</li>
+                        <li>We handle delivery (web, content, SEO, campaigns)</li>
+                        <li>On-brand, on-time, invisible to your clients</li>
+                        <li>Flexible capacity as you grow</li>
+                    </ul>
+                </div>
+                <div class="service-delivery">
+                    <p class="delivery-time">⚡ Turnaround aligned to your client timelines.</p>
+                    <p class="service-result">👉 Result: you scale without stretching yourself thin.</p>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Partner With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-detail" id="campaigns">
+        <div class="container">
+            <div class="service-detail-card">
+                <div class="service-detail-header">
+                    <div class="service-icon-large">🎯</div>
+                    <div class="service-title-wrapper">
+                        <h2>Campaigns</h2>
+                        <p class="service-subtitle">Focused ideas that move people</p>
+                    </div>
+                </div>
+                <div class="service-problem-solution">
+                    <div class="problem-box">
+                        <h3>The problem</h3>
+                        <p>You're running promotions, ads, or launches — but nothing feels cohesive or intentional.</p>
+                    </div>
+                    <div class="solution-box">
+                        <h3>Our solution</h3>
+                        <p>We design campaigns that start with a goal and work backward.</p>
+                    </div>
+                </div>
+                <div class="service-features">
+                    <h3>What that means in real life</h3>
+                    <ul class="benefits-list">
+                        <li>Clear campaign strategy and messaging</li>
+                        <li>Creatives and copy that work together</li>
+                        <li>Paid and organic efforts aligned</li>
+                        <li>Fast testing and refinement</li>
+                    </ul>
+                </div>
+                <div class="service-delivery">
+                    <p class="delivery-time">⚡ Campaign concepts ready in as little as 10 days.</p>
+                    <p class="service-result">👉 Result: campaigns that feel purposeful — and measurable.</p>
+                </div>
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to Get Started?</h2>
+            <p class="cta-subtitle">Let's build something great together. Fast.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Get a Quote</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo-link">
+                    <svg class="logo-img" width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="800" fill="#100908" letter-spacing="-0.5px">Z</text>
+                        <text x="18" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="600" fill="#100908" letter-spacing="-0.5px">ublo</text>
+                        <line x1="22" y1="34" x2="78" y2="34" stroke="#E57236" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                    <p>Websites, apps, and growth systems for LA businesses.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="services.html#websites">Websites</a>
+                        <a href="services.html#apps">Apps</a>
+                        <a href="services.html#content">Content</a>
+                        <a href="services.html#white-label">White-Label</a>
+                        <a href="services.html#campaigns">Campaigns</a>
+                        <a href="services.html#seo">SEO</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="work.html">Work</a>
+                        <a href="contact.html">Let's Talk</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Smarter Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

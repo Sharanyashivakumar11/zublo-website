@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Systems Case Study | Smarter Marketing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+            .platforms-services-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .designs-grid {
+                grid-template-columns: 1fr !important;
+                gap: 16px !important;
+            }
+        }
+        
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .designs-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+        }
+        
+        .design-item {
+            aspect-ratio: 1;
+            min-height: 280px;
+            position: relative;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+        }
+        
+        .design-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .design-item img[src=""],
+        .design-item img:not([src]) {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Brush Elements SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <defs>
+            <path id="brush-underline-1" d="M0,8 Q50,4 100,6 T200,5 T300,7" stroke="currentColor" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </defs>
+    </svg>
+    <header class="header sticky">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo-link">
+                    <svg class="logo-img" width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="800" fill="#100908" letter-spacing="-0.5px">Z</text>
+                        <text x="18" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="600" fill="#100908" letter-spacing="-0.5px">ublo</text>
+                        <line x1="22" y1="34" x2="78" y2="34" stroke="#E57236" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="nav-dropdown">
+                        <a href="services.html" class="nav-link nav-link-dropdown">Services <span class="dropdown-arrow">▼</span></a>
+                        <div class="dropdown-menu">
+                            <a href="services.html#websites" class="dropdown-item">Websites</a>
+                            <a href="services.html#apps" class="dropdown-item">Apps</a>
+                            <a href="services.html#seo" class="dropdown-item">SEO</a>
+                            <a href="services.html#content" class="dropdown-item">Content Systems</a>
+                            <a href="services.html#white-label" class="dropdown-item">White-Label</a>
+                            <a href="services.html#campaigns" class="dropdown-item">Campaigns</a>
+                        </div>
+                    </div>
+                    <a href="work.html" class="nav-link">Work</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link cta-nav">Let's Talk</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <a href="work.html" class="back-link" style="position: fixed; top: 100px; left: 40px; z-index: 100; display: inline-flex; align-items: center; gap: 6px; color: var(--ink-black); text-decoration: none; font-weight: 400; font-size: 14px; opacity: 0.6; transition: opacity 0.2s ease;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">
+        ← Back
+    </a>
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">
+                Content Systems
+                <svg class="brush-underline brush-blue" viewBox="0 0 300 20" preserveAspectRatio="none">
+                    <use href="#brush-underline-1"/>
+                </svg>
+            </h1>
+        </div>
+    </section>
+
+    <section class="case-study-detail" style="padding: 80px 0; background-color: var(--warm-off-white);">
+        <div class="container">
+            <div class="case-study-detail-content">
+                <!-- The Brief Section -->
+                <div class="case-study-section">
+                    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 32px; color: var(--ink-black);">
+                        The Brief
+                    </h2>
+                    <div class="case-study-box" style="background-color: var(--pink-lavender); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black); margin-bottom: 40px;">
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin: 0;">
+                            Create a content system that helps the brand show up regularly on Instagram with posts and Reels that are engaging, educational, and aligned to the target audience — without relying on one-off ideas or trends.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- What We Did Section -->
+                <div class="case-study-section">
+                    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 32px; color: var(--ink-black);">
+                        What We Did
+                    </h2>
+                    <div class="case-study-box" style="background-color: var(--sky-blue); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black); margin-bottom: 40px;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                Developed clear content pillars based on brand goals and audience behavior
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                Planned and executed regular posting schedules
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                Created a mix of static posts, carousels, and Reels
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                Designed visual templates and formats for faster, repeatable content creation
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 0; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--accent-blue); font-weight: 900;">•</span>
+                                Translated product benefits and brand stories into educational, easy-to-consume content
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- The System Section -->
+                <div class="case-study-section">
+                    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 32px; color: var(--ink-black);">
+                        The System
+                    </h2>
+                    <div class="case-study-box" style="background-color: var(--accent-lime); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black); margin-bottom: 40px;">
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-bottom: 24px; font-weight: 600;">
+                            Instead of random posts, we built a repeatable content framework:
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--deep-green); font-weight: 900;">•</span>
+                                Educational content to build trust
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--deep-green); font-weight: 900;">•</span>
+                                Lifestyle and product storytelling to drive engagement
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--deep-green); font-weight: 900;">•</span>
+                                Reel formats designed for discoverability
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 0; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: var(--deep-green); font-weight: 900;">•</span>
+                                Visual consistency across the grid
+                            </li>
+                        </ul>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin-top: 24px; margin-bottom: 0; font-weight: 600;">
+                            This allowed the brand to maintain quality while publishing consistently.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- The Outcome Section -->
+                <div class="case-study-section">
+                    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 32px; color: var(--ink-black);">
+                        The Outcome
+                    </h2>
+                    <div class="case-study-box" style="background-color: var(--accent-orange); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black); margin-bottom: 40px;">
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                Consistent posting without burnout
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                Stronger brand presence and visual identity
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 16px; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                Higher engagement through educational content
+                            </li>
+                            <li style="font-size: 18px; line-height: 1.8; margin-bottom: 0; padding-left: 24px; position: relative;">
+                                <span style="position: absolute; left: 0; color: white; font-weight: 900;">•</span>
+                                A scalable system that supports long-term growth
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Designs Section -->
+                <div class="case-study-section">
+                    <h2 style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 32px; color: var(--ink-black);">
+                        Designs
+                    </h2>
+                    <div class="designs-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px;">
+                        <!-- Nothing But Chicken Designs -->
+                        <div class="design-item" style="background-color: white; border: var(--border-thick) solid var(--ink-black); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                            <img src="images/content-systems-nbc-5.jpg" alt="Nothing But Chicken Design 5">
+                        </div>
+                        <!-- Video -->
+                        <div class="design-item" style="background-color: white; border: var(--border-thick) solid var(--ink-black); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                            <video src="images/content-systems-video.mov" controls style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <div class="design-item" style="background-color: white; border: var(--border-thick) solid var(--ink-black); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                            <img src="images/content-systems-nbc-1.jpg" alt="Nothing But Chicken Design 1">
+                        </div>
+                        <div class="design-item" style="background-color: white; border: var(--border-thick) solid var(--ink-black); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                            <img src="images/content-systems-nbc-2.png" alt="Nothing But Chicken Design 2">
+                        </div>
+                        <div class="design-item" style="background-color: white; border: var(--border-thick) solid var(--ink-black); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                            <img src="images/content-systems-nbc-4.jpg" alt="Nothing But Chicken Design 4">
+                        </div>
+                        <!-- Video 2 -->
+                        <div class="design-item" style="background-color: white; border: var(--border-thick) solid var(--ink-black); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                            <video src="images/content-systems-video-2.mov" controls style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Platforms & Services -->
+                <div class="case-study-section platforms-services-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 60px;">
+                    <div class="case-study-box" style="background-color: var(--warm-off-white); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                        <h3 style="font-size: 24px; font-weight: 900; margin-bottom: 24px; color: var(--ink-black);">Platforms</h3>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin: 0;">Instagram (Posts, Carousels & Reels)</p>
+                    </div>
+                    <div class="case-study-box" style="background-color: var(--warm-off-white); border: var(--border-thick) solid var(--ink-black); border-radius: 12px; padding: 40px; box-shadow: var(--shadow-offset) var(--shadow-offset) 0 0 var(--ink-black);">
+                        <h3 style="font-size: 24px; font-weight: 900; margin-bottom: 24px; color: var(--ink-black);">Services</h3>
+                        <p style="font-size: 18px; line-height: 1.8; color: var(--ink-black); margin: 0;">Content Strategy · Content Systems · Instagram Management · Reels Ideation · Visual Direction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="cta-title">Ready to See Similar Results?</h2>
+            <p class="cta-subtitle">Let's build something great. Fast.</p>
+            <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo-link">
+                    <svg class="logo-img" width="140" height="40" viewBox="0 0 140 40" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="800" fill="#100908" letter-spacing="-0.5px">Z</text>
+                        <text x="18" y="28" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="32" font-weight="600" fill="#100908" letter-spacing="-0.5px">ublo</text>
+                        <line x1="22" y1="34" x2="78" y2="34" stroke="#E57236" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                    <p>Websites, apps, and growth systems for LA businesses.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <a href="services.html#websites">Websites</a>
+                        <a href="services.html#apps">Apps</a>
+                        <a href="services.html#seo">SEO</a>
+                        <a href="services.html#content">Content</a>
+                        <a href="services.html#white-label">White-Label</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="about.html">About</a>
+                        <a href="work.html">Work</a>
+                        <a href="contact.html">Let's Talk</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Smarter Marketing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
