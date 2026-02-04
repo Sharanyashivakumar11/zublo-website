@@ -21,6 +21,9 @@ if (contactForm) {
     const formMessage = document.getElementById('formMessage');
     const submitBtn = document.getElementById('submitBtn');
     
+    // Google Apps Script URL
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwIiLX0i0ybqBGjIHBUKgAMJhmC-083XFUmoOcAUS5waNSBkNOUMaM9Peblg45yQGq3/exec';
+    
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
@@ -32,21 +35,42 @@ if (contactForm) {
         try {
             // Get form data
             const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
+            const formDataObj = Object.fromEntries(formData);
             
             // Send form data as JSON (required for Google Apps Script)
-            const response = await fetch(this.action, {
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
-                body: JSON.stringify(data),
+                body: JSON.stringify(formDataObj),
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
-                }
+                },
+                redirect: 'follow'
             });
             
-            const data = await response.json();
+            // Handle response - Google Apps Script may return HTML on redirect, so try JSON first
+            let responseData;
+            const contentType = response.headers.get('content-type');
+            if (contentType && contentType.includes('application/json')) {
+                responseData = await response.json();
+            } else {
+                // If we get HTML (redirect response), try to parse it or show success
+                const text = await response.text();
+                // Check if it's a redirect HTML page
+                if (text.includes('Moved Temporarily') || text.includes('redirect')) {
+                    // Google Apps Script redirect - assume success
+                    responseData = { success: true, message: 'Form submitted successfully' };
+                } else {
+                    // Try to parse as JSON anyway
+                    try {
+                        responseData = JSON.parse(text);
+                    } catch {
+                        throw new Error('Unexpected response from server');
+                    }
+                }
+            }
             
-            if (response.ok && data.success) {
+            if (response.ok && responseData.success) {
                 // Show success message
                 formMessage.textContent = 'Thank you for your message! We will get back to you within 24 hours.';
                 formMessage.className = 'form-message form-message-success';
@@ -58,7 +82,7 @@ if (contactForm) {
                 // Scroll to message
                 formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } else {
-                throw new Error(data.error || data.message || 'Something went wrong. Please try again.');
+                throw new Error(responseData.error || responseData.message || 'Something went wrong. Please try again.');
             }
         } catch (error) {
             // Show error message

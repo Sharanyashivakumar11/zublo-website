@@ -53,8 +53,25 @@ function doGet(e) {
  */
 function doPost(e) {
   try {
-    // Parse the form data
-    const formData = JSON.parse(e.postData.contents);
+    let formData;
+    
+    // Handle both JSON and URL-encoded form data
+    const contentType = e.postData.type || '';
+    if (contentType.includes('application/json')) {
+      // JSON data
+      formData = JSON.parse(e.postData.contents);
+    } else {
+      // URL-encoded data (fallback)
+      const params = e.parameter;
+      formData = {
+        name: params.name || '',
+        email: params.email || '',
+        phone: params.phone || '',
+        business: params.business || '',
+        service: params.service || '',
+        message: params.message || ''
+      };
+    }
     
     // Extract form fields
     const name = formData.name || '';
