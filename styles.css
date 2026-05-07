@@ -905,6 +905,13 @@ img {
     overflow: visible;
 }
 
+.services-preview .section-title {
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .section-title {
     font-size: clamp(36px, 5vw, 56px);
     font-weight: 900;
@@ -939,6 +946,16 @@ img {
     display: block;
     visibility: visible;
     opacity: 1;
+}
+
+.services-preview .section-title svg {
+    left: auto;
+    right: 0;
+    transform: none;
+    width: 58%;
+    max-width: none;
+    height: 13px;
+    bottom: 8px;
 }
 
 /* Brush Stroke Elements */
