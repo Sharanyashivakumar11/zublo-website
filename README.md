@@ -30,8 +30,7 @@ A neo-brutalist, modern website for a digital marketing agency targeting Los Ang
 1. **Home** (`index.html`) - Hero section, services preview, value proposition, testimonials, white-label section, process timeline
 2. **Services** (`services.html`) - Detailed service descriptions for Websites, Apps, SEO, Content Systems, and White-Label
 3. **Work** (`work.html`) - Case studies and portfolio showcasing real projects
-4. **About** (`about.html`) - Company story, values, and LA focus
-5. **Contact** (`contact.html`) - Contact form and information
+4. **Contact** (`contact.html`) - Contact form and information
 
 ## Features
 
@@ -64,7 +63,6 @@ Or open any HTML file directly in your browser to view the pages.
 ├── index.html          # Homepage
 ├── services.html       # Services page
 ├── work.html          # Work/Case Studies page
-├── about.html         # About page
 ├── contact.html       # Contact page
 ├── styles.css         # Neo-brutalist design system
 ├── script.js          # JavaScript interactions
