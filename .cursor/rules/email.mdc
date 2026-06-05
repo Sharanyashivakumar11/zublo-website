@@ -1,0 +1,16 @@
+---
+description: Zublo email provider and contact address conventions
+alwaysApply: true
+---
+
+# Email
+
+- **Provider**: [Spacemail](https://www.spacemail.com) (`www.spacemail.com`)
+- **Domain**: `zublo.co`
+- **Primary contact address**: `contact@zublo.co`
+
+When updating email references, contact forms, or DNS/MX guidance:
+
+- Use `contact@zublo.co` on the site and in form notification config
+- Do not use legacy `hello@smartermarketing.com` addresses
+- Assume mailbox and DNS are managed through Spacemail unless the user says otherwise

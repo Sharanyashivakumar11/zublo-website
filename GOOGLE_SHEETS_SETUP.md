@@ -27,7 +27,7 @@ In the Google Apps Script editor, update these values at the top of the file:
 
 ```javascript
 // Your email where you want to receive form submissions
-const RECIPIENT_EMAIL = 'hello@smartermarketing.com';
+const RECIPIENT_EMAIL = 'contact@zublo.co';
 
 // Your Google Sheet ID (or leave empty to auto-create)
 const SPREADSHEET_ID = '';
