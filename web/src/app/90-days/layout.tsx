@@ -29,7 +29,7 @@ export default function NinetyDaysLayout({
   return (
     <>
       <JsonLd data={ninetyDaysJsonLd} />
-      <link rel="stylesheet" href="/styles.css?v=5" />
+      <link rel="stylesheet" href="/styles.css?v=6" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link
         rel="preconnect"

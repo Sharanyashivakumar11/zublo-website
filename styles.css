@@ -3774,6 +3774,7 @@ h2 {
 
 .book-call-layout-single {
     max-width: 720px;
+    margin-inline: auto;
 }
 
 .book-call-copy h2 {
@@ -3834,6 +3835,10 @@ h2 {
 @media (min-width: 900px) {
     .book-call-layout {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .book-call-layout-single {
+        grid-template-columns: 1fr;
     }
 }
 
