@@ -1,106 +1,13 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { GOOGLE_SCRIPT_URL } from "@/lib/form-endpoint";
-import {
-  getIndustryFromUrl,
-  LEAD_FORM_INDUSTRY_EVENT,
-} from "@/lib/lead-form-industry";
 import { industries } from "@/data/industries";
-import { contactInfo } from "@/data/cta-links";
 
 type LeadCaptureFormProps = {
   defaultIndustry?: string;
 };
 
 export function LeadCaptureForm({ defaultIndustry = "" }: LeadCaptureFormProps) {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [industry, setIndustry] = useState(() => {
-    const fromUrl = getIndustryFromUrl();
-    return fromUrl || defaultIndustry;
-  });
-
-  useEffect(() => {
-    const syncFromUrl = () => {
-      const fromUrl = getIndustryFromUrl();
-      if (fromUrl) setIndustry(fromUrl);
-    };
-
-    const onIndustryEvent = (event: Event) => {
-      const detail = (event as CustomEvent<string>).detail;
-      if (detail) setIndustry(detail);
-    };
-
-    syncFromUrl();
-    window.addEventListener("popstate", syncFromUrl);
-    window.addEventListener("hashchange", syncFromUrl);
-    window.addEventListener(LEAD_FORM_INDUSTRY_EVENT, onIndustryEvent);
-
-    return () => {
-      window.removeEventListener("popstate", syncFromUrl);
-      window.removeEventListener("hashchange", syncFromUrl);
-      window.removeEventListener(LEAD_FORM_INDUSTRY_EVENT, onIndustryEvent);
-    };
-  }, []);
-
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setStatus("loading");
-
-    const form = event.currentTarget;
-    const data = new FormData(form);
-
-    const name = String(data.get("name") ?? "");
-    const email = String(data.get("email") ?? "");
-    const website = String(data.get("website") ?? "");
-    const business = String(data.get("business") ?? "");
-    const selectedIndustry = String(data.get("industry") ?? industry);
-
-    const body = new URLSearchParams({
-      name,
-      email,
-      business,
-      service: "90-Day Mini Audit",
-      message: [
-        `Source: 90-days landing page`,
-        `Industry: ${selectedIndustry || "Not specified"}`,
-        `Website / Instagram: ${website}`,
-      ].join("\n"),
-    });
-
-    try {
-      await fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        body,
-        mode: "no-cors",
-      });
-      setStatus("success");
-      form.reset();
-      setIndustry(getIndustryFromUrl());
-    } catch {
-      setStatus("error");
-    }
-  }
-
-  if (status === "success") {
-    return (
-      <div className="lead-form-success">
-        <p className="lead-form-success-title">You&apos;re in.</p>
-        <p>
-          We&apos;ll send your 3 ideas within a few hours. Check your inbox — and spam folder,
-          just in case.
-        </p>
-      </div>
-    );
-  }
-
   return (
-    <form className="contact-form lead-capture-form" onSubmit={handleSubmit}>
-      {industry ? (
-        <p className="lead-form-industry-note">
-          Tailoring your ideas for <strong>{industry}</strong>
-        </p>
-      ) : null}
+    <form className="contact-form lead-capture-form" data-lead-capture-form>
+      <p className="lead-form-industry-note" data-lead-industry-note hidden />
       <div className="lead-form-grid">
         <div className="form-group">
           <label htmlFor="lead-name">Name *</label>
@@ -129,8 +36,8 @@ export function LeadCaptureForm({ defaultIndustry = "" }: LeadCaptureFormProps) 
           <select
             id="lead-industry"
             name="industry"
-            value={industry}
-            onChange={(e) => setIndustry(e.target.value)}
+            defaultValue={defaultIndustry}
+            data-lead-industry-select
           >
             <option value="">Select one (optional)</option>
             {industries.map((item) => (
@@ -142,15 +49,13 @@ export function LeadCaptureForm({ defaultIndustry = "" }: LeadCaptureFormProps) 
           </select>
         </div>
       </div>
-      <button type="submit" className="btn btn-primary btn-large" disabled={status === "loading"}>
-        {status === "loading" ? "Sending..." : "Send My 3 Ideas"}
+      <button type="submit" className="btn btn-primary btn-large" data-lead-submit>
+        Send My 3 Ideas
       </button>
-      {status === "error" && (
-        <p className="lead-form-error">
-          Something went wrong. Email us at {contactInfo.emailDisplay} instead.
-        </p>
-      )}
-      <p className="lead-form-fine-print">No spam. No sales call unless you want one. Unsubscribe anytime.</p>
+      <p className="lead-form-error" data-lead-form-error hidden />
+      <p className="lead-form-fine-print">
+        No spam. No sales call unless you want one. Unsubscribe anytime.
+      </p>
     </form>
   );
 }

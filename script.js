@@ -429,3 +429,161 @@ if (navDropdown) {
         resizeTimeout = setTimeout(initReadMore, 100);
     });
 })();
+
+// 90-days page: industry tabs + lead form (works without Next.js client bundles on static hosting)
+(function init90DaysPage() {
+    const GOOGLE_SCRIPT_URL =
+        'https://script.google.com/macros/s/AKfycbzBiQ5xOsdJigvDHpUgcOFXHGHERn-n5OVWjJf9AqSGgxxCzjHo-HvCh_4jDEBwro4r/exec';
+    const LEAD_FORM_INDUSTRY_EVENT = 'lead-form:industry';
+
+    function getIndustryFromUrl() {
+        return new URLSearchParams(window.location.search).get('industry') ?? '';
+    }
+
+    function setLeadFormIndustry(shortName, scrollToForm) {
+        if (!shortName) return;
+
+        const url = new URL(window.location.href);
+        url.searchParams.set('industry', shortName);
+        url.hash = 'free-audit';
+        window.history.replaceState(null, '', url);
+        syncLeadFormIndustry(shortName);
+        window.dispatchEvent(new CustomEvent(LEAD_FORM_INDUSTRY_EVENT, { detail: shortName }));
+
+        if (scrollToForm !== false) {
+            document.getElementById('free-audit')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    function syncLeadFormIndustry(industry) {
+        const select = document.querySelector('[data-lead-industry-select]');
+        const note = document.querySelector('[data-lead-industry-note]');
+
+        if (select && industry) {
+            select.value = industry;
+        }
+
+        if (note) {
+            if (industry) {
+                note.innerHTML = 'Tailoring your ideas for <strong>' + industry + '</strong>';
+                note.hidden = false;
+            } else {
+                note.textContent = '';
+                note.hidden = true;
+            }
+        }
+    }
+
+    function initIndustryTabs() {
+        const section = document.getElementById('industries');
+        if (!section) return;
+
+        const tabs = section.querySelectorAll('[data-industry-tab]');
+        const panels = section.querySelectorAll('[data-industry-panel]');
+
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                const industryId = tab.getAttribute('data-industry-tab');
+                const panelId = tab.getAttribute('aria-controls');
+                if (!industryId || !panelId) return;
+
+                tabs.forEach(function (item) {
+                    const isActive = item === tab;
+                    item.classList.toggle('is-active', isActive);
+                    item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+
+                panels.forEach(function (panel) {
+                    panel.hidden = panel.id !== panelId;
+                });
+            });
+        });
+
+        section.querySelectorAll('.industry-cta').forEach(function (button) {
+            button.addEventListener('click', function () {
+                const shortName = button.getAttribute('data-industry-short-name');
+                if (shortName) setLeadFormIndustry(shortName);
+            });
+        });
+    }
+
+    function initLeadCaptureForm() {
+        const form = document.querySelector('[data-lead-capture-form]');
+        if (!form) return;
+
+        syncLeadFormIndustry(getIndustryFromUrl());
+
+        window.addEventListener('popstate', function () {
+            syncLeadFormIndustry(getIndustryFromUrl());
+        });
+        window.addEventListener('hashchange', function () {
+            syncLeadFormIndustry(getIndustryFromUrl());
+        });
+        window.addEventListener(LEAD_FORM_INDUSTRY_EVENT, function (event) {
+            const detail = event.detail;
+            if (detail) syncLeadFormIndustry(detail);
+        });
+
+        form.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            const submitBtn = form.querySelector('[data-lead-submit]');
+            const errorEl = form.querySelector('[data-lead-form-error]');
+            const originalLabel = submitBtn ? submitBtn.textContent : 'Send My 3 Ideas';
+
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+            }
+            if (errorEl) errorEl.hidden = true;
+
+            const data = new FormData(form);
+            const body = new URLSearchParams({
+                name: String(data.get('name') ?? ''),
+                email: String(data.get('email') ?? ''),
+                business: String(data.get('business') ?? ''),
+                service: '90-Day Mini Audit',
+                message: [
+                    'Source: 90-days landing page',
+                    'Industry: ' + (String(data.get('industry') ?? '') || 'Not specified'),
+                    'Website / Instagram: ' + String(data.get('website') ?? ''),
+                ].join('\n'),
+            });
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    body: body,
+                    mode: 'no-cors',
+                });
+
+                form.innerHTML =
+                    '<div class="lead-form-success">' +
+                    '<p class="lead-form-success-title">You\'re in.</p>' +
+                    '<p>We\'ll send your 3 ideas within a few hours. Check your inbox — and spam folder, just in case.</p>' +
+                    '</div>';
+            } catch (error) {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalLabel;
+                }
+                if (errorEl) {
+                    errorEl.textContent =
+                        'Something went wrong. Email us at contact@zublo.co instead.';
+                    errorEl.hidden = false;
+                }
+            }
+        });
+    }
+
+    function boot() {
+        initIndustryTabs();
+        initLeadCaptureForm();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', boot);
+    } else {
+        boot();
+    }
+})();

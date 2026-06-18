@@ -36,7 +36,7 @@ export default function NinetyDaysPage() {
       </main>
       <StickyLeadBar />
       <SiteFooter />
-      <Script src="/script.js?v=4" strategy="afterInteractive" />
+      <Script src="/script.js?v=5" strategy="afterInteractive" />
     </>
   );
 }
