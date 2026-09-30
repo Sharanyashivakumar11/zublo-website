@@ -77,3 +77,10 @@ a:focus-visible,button:focus-visible {outline:3px solid var(--blue);outline-offs
 .direct-ctas a {display:inline-flex;align-items:center;min-height:44px;text-underline-offset:4px}
 .growth-form h3 {font-family:'Space Grotesk',sans-serif;font-size:23px;line-height:1.2;margin:0 0 8px}
 .form-intro {font-size:13px;line-height:1.6;color:#564c45;margin:0 0 22px}
+.who-we-help {padding-top:0;padding-bottom:55px}
+.audience-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.audience-grid article {background:#e4e9dd;border-top:4px solid var(--green);padding:22px 18px}
+.audience-grid h3 {font:700 19px/1.25 'Space Grotesk',sans-serif;margin:0 0 10px}
+.audience-grid p {font-size:14px;line-height:1.6;color:#423c39;margin:0}
+@media(max-width:760px) {.audience-grid {grid-template-columns:1fr 1fr}.audience-grid h3 {font-size:17px}}
+@media(max-width:400px) {.audience-grid {grid-template-columns:1fr}}
