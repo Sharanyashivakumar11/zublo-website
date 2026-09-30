@@ -29,4 +29,6 @@ Also passed `node --check small-business-expo/expo.js` and `git diff --check`.
 
 This flow requests a call. It does not reserve a calendar slot or send an automatic confirmation email to the visitor. A time must still be arranged by email. The underlying spreadsheet and SMS delivery were not independently verified.
 
-Two clearly marked test requests were sent; neither requested an actual appointment. Changes and tests remain local and have not been committed or pushed. The live website still uses its previously published form code.
+Two clearly marked test requests were sent during the initial local checks; neither requested an actual appointment. The website changes and tests were subsequently published on September 30, 2026 in commit `843d586`.
+
+The optional AI service now uses “AI coworker.” Four additional acknowledgment checks passed, bringing the automated total to twelve. The acknowledgment implementation is saved in `google-apps-script.js`, but is not active until the existing Apps Script deployment is updated. See `EMAIL-DEPLOYMENT.md` for the separate backend deployment steps.
