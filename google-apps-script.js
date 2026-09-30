@@ -144,11 +144,15 @@ function doPost(e) {
     
     // Send SMS/WhatsApp notification
     sendSMS(name, email, service, message);
+
+    // Confirmation delivery must not turn an accepted request into a retry.
+    const acknowledgmentSent = sendGrowthAcknowledgment(name, email, service);
     
     // Return success response
     return ContentService.createTextOutput(
       JSON.stringify({
         success: true,
+        acknowledgmentSent: acknowledgmentSent,
         message: 'Form submitted successfully'
       })
     ).setMimeType(ContentService.MimeType.JSON);
@@ -165,6 +169,26 @@ function doPost(e) {
 }
 
 // ========== HELPER FUNCTIONS ==========
+
+/** Sends a receipt only for Expo Growth Check requests, never a booking confirmation. */
+function sendGrowthAcknowledgment(name, email, service) {
+  if (service !== 'Expo Growth Check' || !/^[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,;<>]+$/.test(email)) {
+    return false;
+  }
+  try {
+    MailApp.sendEmail({
+      to: email,
+      subject: 'We received your Zublo Growth Check request',
+      name: 'Zublo',
+      replyTo: RECIPIENT_EMAIL,
+      body: `Hi ${name || 'there'},\n\nThanks for requesting your free 15-minute Growth Check. We’ve received your request and will email you to arrange a time.\n\nThis is a receipt for your request. Your appointment is confirmed only once we agree on a time.\n\nOn the call, we’ll focus on the business problem you want to improve and discuss three practical ideas and one quick win. Afterward, we’ll send your one-page action plan. There’s no obligation to hire us.\n\nYou can reply to this email with any questions or a preferred time.\n\nZublo\ncontact@zublo.co\nhttps://zublo.co/`
+    });
+    return true;
+  } catch (error) {
+    Logger.log('Growth Check acknowledgment failed: ' + error.toString());
+    return false;
+  }
+}
 
 /**
  * Gets the spreadsheet or creates a new one if needed

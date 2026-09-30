@@ -40,6 +40,7 @@ a:focus-visible,button:focus-visible {outline:3px solid var(--blue);outline-offs
 .services-grid p,.audience p {font-size:14px;line-height:1.65;margin:0;color:#423c39}
 .audience {background:#e4e9dd;border-left:4px solid var(--green);padding:23px 26px;margin-top:25px}
 .audience a {display:inline-block;font-size:13px;font-weight:700;margin-top:14px}
+.partner-note {font-size:14px;line-height:1.7;color:#423c39;margin:22px 0 0;max-width:780px}
 .mobile-booking {display:none}
 @media(max-width:760px) {
   .hero-inner {padding-top:45px;padding-bottom:24px}
@@ -66,3 +67,9 @@ a:focus-visible,button:focus-visible {outline:3px solid var(--blue);outline-offs
   .hero-art {min-height:0;height:auto;margin:16px 0 0;transform:none}
   .growth-plan-art {max-width:340px}
 }
+
+.services-grid .service-label {font-size:10px;font-weight:800;letter-spacing:1px;color:var(--green);margin:0 0 11px}
+.business-examples {font-size:13px;line-height:1.65;padding-left:20px;margin:17px 0}
+.business-examples li {margin-bottom:9px}
+.growth-form select {display:block;width:100%;font:inherit;font-size:14px;min-height:44px;border:2px solid #847c75;background:white;color:var(--ink);padding:10px 12px;margin-bottom:16px}
+.growth-form select:focus {outline:2px solid var(--blue);outline-offset:2px}
