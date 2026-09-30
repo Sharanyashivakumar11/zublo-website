@@ -17,7 +17,7 @@ test('expo receipt goes to visitor with reply address and no reserved appointmen
   assert.equal(context.sendGrowthAcknowledgment('Test', 'visitor@example.com', 'Expo Growth Check'), true);
   assert.equal(emails.length, 1);
   assert.equal(emails[0].to, 'visitor@example.com');
-  assert.equal(emails[0].replyTo, 'contact@zublo.co');
+  assert.equal(emails[0].replyTo, 'sharanya@zublo.co');
   assert.match(emails[0].body, /confirmed only once we agree on a time/);
 });
 test('other services do not receive the expo receipt', () => {

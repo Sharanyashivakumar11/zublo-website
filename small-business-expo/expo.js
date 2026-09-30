@@ -24,7 +24,7 @@
     const body = new URLSearchParams();
     ['name', 'email', 'business', 'service'].forEach(key => body.set(key, String(fields.get(key) || '')));
     body.set('message', [
-      'Free 15-minute Expo Growth Check request. Source: small-business-expo.',
+      'Free 30-minute Expo Growth Check request. Source: small-business-expo.',
       `What they want help with: ${fields.get('goal') || 'Discuss on the call'}`,
       `Website or Google profile: ${fields.get('website') || 'Not provided'}`,
       `Preferred time: ${fields.get('preferred_time') || 'Please arrange by email'}`
@@ -39,7 +39,7 @@
       if (!response.ok) throw new Error('Request rejected');
       const result = await response.json();
       if (result.success !== true) throw new Error('Request not accepted');
-      status.textContent = 'Your request has been received. We’ll email you to arrange a time. Your appointment is confirmed only once we agree on a time. If you don’t hear from us, contact contact@zublo.co.';
+      status.textContent = 'Your request has been received. We’ll email you to arrange a time. Your appointment is confirmed only once we agree on a time. If you don’t hear from us, contact sharanya@zublo.co.';
       if (result.acknowledgmentSent === true) {
         status.textContent += ' A receipt has also been emailed to you.';
       }
@@ -48,8 +48,8 @@
       form.reset();
     } catch (error) {
       status.textContent = error.name === 'AbortError'
-        ? 'This is taking longer than expected, so we couldn’t confirm your request. It may have reached us. Please email contact@zublo.co before sending again.'
-        : 'We couldn’t confirm your request. Please email contact@zublo.co to arrange your free Growth Check, or try again if you were offline.';
+        ? 'This is taking longer than expected, so we couldn’t confirm your request. It may have reached us. Please email sharanya@zublo.co before sending again.'
+        : 'We couldn’t confirm your request. Please email sharanya@zublo.co to arrange your free Growth Check, or try again if you were offline.';
       status.className = 'status-error';
     } finally {
       clearTimeout(timeout);

@@ -180,8 +180,8 @@ function sendGrowthAcknowledgment(name, email, service) {
       to: email,
       subject: 'We received your Zublo Growth Check request',
       name: 'Zublo',
-      replyTo: RECIPIENT_EMAIL,
-      body: `Hi ${name || 'there'},\n\nThanks for requesting your free 15-minute Growth Check. We’ve received your request and will email you to arrange a time.\n\nThis is a receipt for your request. Your appointment is confirmed only once we agree on a time.\n\nOn the call, we’ll focus on the business problem you want to improve and discuss three practical ideas and one quick win. Afterward, we’ll send your one-page action plan. There’s no obligation to hire us.\n\nYou can reply to this email with any questions or a preferred time.\n\nZublo\ncontact@zublo.co\nhttps://zublo.co/`
+      replyTo: 'sharanya@zublo.co',
+      body: `Hi ${name || 'there'},\n\nThanks for requesting your free 30-minute Growth Check. We’ve received your request and will email you to arrange a time.\n\nThis is a receipt for your request. Your appointment is confirmed only once we agree on a time.\n\nOn the call, we’ll focus on the business problem you want to improve and discuss three practical ideas and one quick win. Afterward, we’ll send your one-page action plan. There’s no obligation to hire us.\n\nYou can reply to this email with any questions or a preferred time.\n\nSharanya at Zublo\nsharanya@zublo.co\nhttps://zublo.co/`
     });
     return true;
   } catch (error) {

@@ -44,6 +44,6 @@
     <rect x="280" y="354" width="140" height="43" rx="3" fill="#D0CC4E" stroke="#100908" stroke-width="2.5"/>
     <circle cx="300" cy="375" r="9" stroke="#100908" stroke-width="1.5"/>
     <path d="M300 370v5l4 2" stroke="#100908" stroke-width="1.5" stroke-linecap="round"/>
-    <text x="317" y="379" fill="#100908" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800">15 MIN · FREE</text>
+    <text x="317" y="379" fill="#100908" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800">30 MIN · FREE</text>
   </g>
 </svg>
