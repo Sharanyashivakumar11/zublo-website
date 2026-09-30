@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 440" fill="none">
+  <title>Your Expo Growth Check</title>
+  <desc>A personal action plan with three specific fixes, one quick win, and a one-page plan to keep.</desc>
+  <defs>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#100908" opacity=".16"/></pattern>
+  </defs>
+  <circle cx="265" cy="235" r="166" fill="#E57236"/>
+  <path d="M344 340h100v78H344z" fill="url(#dots)"/>
+  <path d="m39 110 7-16m-20 3 14 5m-5-25 7 9" stroke="#085F47" stroke-width="3" stroke-linecap="round"/>
+  <path d="m414 41 4 13 13 4-13 4-4 13-4-13-13-4 13-4 4-13Z" fill="#D0CC4E" stroke="#100908" stroke-width="2.5"/>
+  <text x="44" y="32" fill="#085F47" font-family="Inter,Arial,sans-serif" font-size="10" font-weight="800" letter-spacing="2">YOUR EXPO TAKEAWAY</text>
+  <g transform="rotate(7 255 246)">
+    <rect x="111" y="87" width="294" height="304" rx="4" fill="#100908"/>
+    <rect x="105" y="80" width="294" height="304" rx="4" fill="#F3CCE7" stroke="#100908" stroke-width="3"/>
+  </g>
+  <g transform="rotate(-4 225 217)">
+    <rect x="61" y="67" width="345" height="319" rx="4" fill="#100908"/>
+    <rect x="53" y="59" width="345" height="319" rx="4" fill="#F6F2ED" stroke="#100908" stroke-width="3"/>
+    <path d="M54 65a5 5 0 0 1 5-5h333a5 5 0 0 1 5 5v30H54V65Z" fill="#085F47"/>
+    <circle cx="73" cy="77" r="3" fill="#D0CC4E"/>
+    <text x="86" y="81" fill="#F6F2ED" font-family="Inter,Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="1.4">ZUBLO / GROWTH CHECK</text>
+    <text x="77" y="131" fill="#100908" font-family="Inter,Arial,sans-serif" font-size="25" font-weight="800" letter-spacing="-.8">Your next move,</text>
+    <text x="77" y="159" fill="#100908" font-family="Inter,Arial,sans-serif" font-size="25" font-weight="800" letter-spacing="-.8">made clearer.</text>
+    <path d="M78 168h176" stroke="#E57236" stroke-width="5" stroke-linecap="round"/>
+    <rect x="76" y="187" width="298" height="47" rx="3" fill="#DCEAF0"/>
+    <circle cx="98" cy="210" r="12" fill="#B3D7E7" stroke="#100908" stroke-width="1.5"/>
+    <path d="m93 210 3 3 6-7" stroke="#085F47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="119" y="207" fill="#100908" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="800">3 specific fixes</text>
+    <text x="119" y="224" fill="#4D4540" font-family="Inter,Arial,sans-serif" font-size="10">Tailored to your business</text>
+    <rect x="76" y="243" width="298" height="47" rx="3" fill="#E8E6B7"/>
+    <circle cx="98" cy="266" r="12" fill="#D0CC4E" stroke="#100908" stroke-width="1.5"/>
+    <path d="m93 266 3 3 6-7" stroke="#085F47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="119" y="263" fill="#100908" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="800">1 quick win</text>
+    <text x="119" y="280" fill="#4D4540" font-family="Inter,Arial,sans-serif" font-size="10">A clear place to start this week</text>
+    <rect x="76" y="299" width="298" height="47" rx="3" fill="#F3CCE7"/>
+    <circle cx="98" cy="322" r="12" fill="#F2D1DE" stroke="#100908" stroke-width="1.5"/>
+    <path d="m93 322 3 3 6-7" stroke="#085F47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="119" y="319" fill="#100908" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="800">Your one-page plan</text>
+    <text x="119" y="336" fill="#4D4540" font-family="Inter,Arial,sans-serif" font-size="10">Keep it. Put it into action.</text>
+    <text x="77" y="364" fill="#085F47" font-family="Inter,Arial,sans-serif" font-size="8" font-weight="700" letter-spacing="1.1">SMALL STEPS. REAL MOMENTUM.</text>
+  </g>
+  <g transform="rotate(4 347 381)">
+    <rect x="285" y="359" width="140" height="43" rx="3" fill="#100908"/>
+    <rect x="280" y="354" width="140" height="43" rx="3" fill="#D0CC4E" stroke="#100908" stroke-width="2.5"/>
+    <circle cx="300" cy="375" r="9" stroke="#100908" stroke-width="1.5"/>
+    <path d="M300 370v5l4 2" stroke="#100908" stroke-width="1.5" stroke-linecap="round"/>
+    <text x="317" y="379" fill="#100908" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="800">15 MIN · FREE</text>
+  </g>
+</svg>
