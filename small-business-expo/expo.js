@@ -24,7 +24,8 @@
     const body = new URLSearchParams();
     ['name', 'email', 'business', 'service'].forEach(key => body.set(key, String(fields.get(key) || '')));
     body.set('message', [
-      'Free 30-minute Expo Growth Check request. Source: small-business-expo.',
+      'Free Expo starter request. Source: small-business-expo.',
+      `Chosen offer: ${fields.get('offer') || 'Help me choose on the call'}`,
       `What they want help with: ${fields.get('goal') || 'Discuss on the call'}`,
       `Website or Google profile: ${fields.get('website') || 'Not provided'}`,
       `Preferred time: ${fields.get('preferred_time') || 'Please arrange by email'}`
@@ -55,7 +56,7 @@
       clearTimeout(timeout);
       status.hidden = false;
       button.disabled = false;
-      button.textContent = 'Request my free Growth Check →';
+      button.textContent = 'Request my free Expo starter →';
     }
   });
 })();

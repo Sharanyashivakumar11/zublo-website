@@ -84,3 +84,12 @@ a:focus-visible,button:focus-visible {outline:3px solid var(--blue);outline-offs
 .audience-grid p {font-size:14px;line-height:1.6;color:#423c39;margin:0}
 @media(max-width:760px) {.audience-grid {grid-template-columns:1fr 1fr}.audience-grid h3 {font-size:17px}}
 @media(max-width:400px) {.audience-grid {grid-template-columns:1fr}}
+.expo-offers {padding-bottom:25px}
+.offer-grid {display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.offer-grid .value-card {display:flex;flex-direction:column;min-height:0}
+.offer-grid h3 {font-size:27px;margin:20px 0 14px}
+.offer-grid .value-card p {max-width:none;font-size:14px}
+.offer-grid .offer-detail {margin:16px 0 24px}
+.offer-grid .button {margin-top:auto;font-size:13px;gap:10px;padding:14px 10px}
+.offer-note {font-size:12px;line-height:1.7;color:#514942;margin:25px 0 0;text-align:center}
+@media(max-width:760px) {.offer-grid {grid-template-columns:1fr}.offer-grid h3 {font-size:24px}}
