@@ -50,7 +50,7 @@
     } catch (error) {
       status.textContent = error.name === 'AbortError'
         ? 'This is taking longer than expected, so we couldn’t confirm your request. It may have reached us. Please email sharanya@zublo.co before sending again.'
-        : 'We couldn’t confirm your request. Please email sharanya@zublo.co to arrange your free Growth Check, or try again if you were offline.';
+        : 'We couldn’t confirm your request. Please email sharanya@zublo.co to arrange your free Expo starter, or try again if you were offline.';
       status.className = 'status-error';
     } finally {
       clearTimeout(timeout);
