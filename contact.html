@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Smarter Marketing</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -34,11 +34,17 @@
                         <line x1="22" y1="34" x2="78" y2="34" stroke="#E57236" stroke-width="5" stroke-linecap="round"/>
                     </svg>
                 </a>
-                <nav class="nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="nav" id="mainNav">
                     <a href="index.html" class="nav-link">Home</a>
                     <div class="nav-dropdown">
                         <a href="services.html" class="nav-link nav-link-dropdown">Services <span class="dropdown-arrow">▼</span></a>
                         <div class="dropdown-menu">
+                            <a href="ai-coworker.html" class="dropdown-item">AI Coworker</a>
                             <a href="services.html#websites" class="dropdown-item">Websites</a>
                             <a href="services.html#apps" class="dropdown-item">Apps</a>
                             <a href="services.html#seo" class="dropdown-item">SEO</a>
@@ -62,7 +68,7 @@
                     <use href="#brush-underline-1"/>
                 </svg>
             </h1>
-            <p style="font-size: 24px; margin-top: 20px; font-weight: 500;">Ready to launch in 10–15 days? Let's talk.</p>
+            <p style="font-size: 24px; margin-top: 20px; font-weight: 500;">Websites in 10–15 days. AI coworkers in as little as 14. Let's talk.</p>
         </div>
     </section>
 
@@ -94,6 +100,7 @@
                             <label for="service">Service Interested In *</label>
                             <select id="service" name="service" required>
                                 <option value="">Select a service</option>
+                                <option value="ai-coworker">AI Coworker</option>
                                 <option value="website">Website</option>
                                 <option value="app">App</option>
                                 <option value="seo">SEO</option>
@@ -151,11 +158,12 @@
                         <line x1="22" y1="34" x2="78" y2="34" stroke="#E57236" stroke-width="5" stroke-linecap="round"/>
                     </svg>
                 </a>
-                    <p>Websites, apps, and growth systems for LA businesses.</p>
+                    <p>Websites, apps, AI coworkers, and growth systems for LA businesses.</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
                         <h4>Services</h4>
+                        <a href="ai-coworker.html">AI Coworker</a>
                         <a href="services.html#websites">Websites</a>
                         <a href="services.html#apps">Apps</a>
                         <a href="services.html#seo">SEO</a>
@@ -170,11 +178,11 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Smarter Marketing. All rights reserved.</p>
+                <p>&copy; 2026 Zublo. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

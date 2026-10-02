@@ -1,6 +1,6 @@
 # Smarter Marketing for a New Era
 
-A neo-brutalist, modern website for a digital marketing agency targeting Los Angeles business owners and agencies. Built with speed and affordability as core USPs — websites and digital systems delivered in 10–15 days without sacrificing quality.
+A neo-brutalist, modern website for a digital marketing agency targeting Los Angeles business owners and agencies. Built with speed and affordability as core USPs: websites and digital systems delivered in 10–15 days without sacrificing quality.
 
 ## Design System
 
@@ -28,9 +28,10 @@ A neo-brutalist, modern website for a digital marketing agency targeting Los Ang
 ## Pages
 
 1. **Home** (`index.html`) - Hero section, services preview, value proposition, testimonials, white-label section, process timeline
-2. **Services** (`services.html`) - Detailed service descriptions for Websites, Apps, SEO, Content Systems, and White-Label
-3. **Work** (`work.html`) - Case studies and portfolio showcasing real projects
-4. **Contact** (`contact.html`) - Contact form and information
+2. **Services** (`services.html`) - Detailed service descriptions for AI Coworker, Websites, Apps, SEO, Content Systems, and White-Label
+3. **AI Coworkers** (`ai-coworker.html`) - Coworker roles, industry examples, a day-in-the-life story, guardrails, and FAQ
+4. **Work** (`work.html`) - Case studies and portfolio showcasing real projects
+5. **Contact** (`contact.html`) - Contact form and information
 
 ## Features
 
@@ -44,11 +45,12 @@ A neo-brutalist, modern website for a digital marketing agency targeting Los Ang
 
 ## Core Services
 
-1. **Websites** – High-converting marketing sites and landing pages (10–15 days)
-2. **Apps** – MVPs, internal tools, dashboards, and lightweight products
-3. **SEO** – SEO foundations, local SEO, and content-led optimization
-4. **Content Systems** – Repeatable, scalable content workflows
-5. **White-Label Services** – Websites, apps, SEO, and content under partner brands
+1. **AI Coworker** – Custom AI teammates for lead response, front desk, content drafting, and reporting
+2. **Websites** – High-converting marketing sites and landing pages (10–15 days)
+3. **Apps** – MVPs, internal tools, dashboards, and lightweight products
+4. **SEO** – SEO foundations, local SEO, and content-led optimization
+5. **Content Systems** – Repeatable, scalable content workflows
+6. **White-Label Services** – Websites, apps, SEO, and content under partner brands
 
 ## Getting Started
 

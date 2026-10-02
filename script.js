@@ -20,6 +20,12 @@ const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     const formMessage = document.getElementById('formMessage');
     const submitBtn = document.getElementById('submitBtn');
+
+    const serviceSelect = document.getElementById('service');
+    const requestedService = new URLSearchParams(window.location.search).get('service');
+    if (serviceSelect && Array.from(serviceSelect.options).some(option => option.value === requestedService)) {
+        serviceSelect.value = requestedService;
+    }
     
     // Google Apps Script URL
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzBiQ5xOsdJigvDHpUgcOFXHGHERn-n5OVWjJf9AqSGgxxCzjHo-HvCh_4jDEBwro4r/exec';
@@ -148,6 +154,41 @@ document.querySelectorAll('.service-card, .pricing-card, .case-study-card, .test
     observer.observe(element);
 });
 
+// Tabs
+document.querySelectorAll('[data-tabs]').forEach(tabs => {
+    const tabButtons = Array.from(tabs.querySelectorAll('[role="tab"]'));
+
+    function selectTab(selected) {
+        tabButtons.forEach(button => {
+            const isSelected = button === selected;
+            button.setAttribute('aria-selected', isSelected);
+            button.tabIndex = isSelected ? 0 : -1;
+            const panel = document.getElementById(button.getAttribute('aria-controls'));
+            if (panel) panel.hidden = !isSelected;
+        });
+    }
+
+    tabButtons.forEach((button, index) => {
+        button.addEventListener('click', () => selectTab(button));
+        button.addEventListener('keydown', e => {
+            const last = tabButtons.length - 1;
+            const targets = {
+                ArrowRight: index === last ? 0 : index + 1,
+                ArrowLeft: index === 0 ? last : index - 1,
+                Home: 0,
+                End: last
+            };
+            if (!(e.key in targets)) return;
+            e.preventDefault();
+            const next = tabButtons[targets[e.key]];
+            next.focus();
+            selectTab(next);
+        });
+    });
+
+    selectTab(tabButtons.find(button => button.getAttribute('aria-selected') === 'true') || tabButtons[0]);
+});
+
 // Mobile menu toggle
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const mainNav = document.getElementById('mainNav');
@@ -268,7 +309,6 @@ if (navDropdown) {
     const ticksContainer = document.querySelector('.aperture-ticks');
     
     if (!wrap || !lensGroup || !housing || !bladesContainer || !highlight) {
-        console.error('Aperture lens elements not found');
         return;
     }
     
