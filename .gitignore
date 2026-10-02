@@ -1,0 +1,12 @@
+# Dependencies & build output
+web/node_modules/
+web/.next/
+web/out/
+
+# Next.js static export chunks (regenerated on deploy)
+_next/
+
+# OS & env
+.DS_Store
+.env
+.env.*

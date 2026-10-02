@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B3D7E7"/>
+      <stop offset="45%" stop-color="#F3CCE7"/>
+      <stop offset="100%" stop-color="#D0CC4E"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="56" y="56" width="1088" height="518" rx="28" fill="#FAFAF8" stroke="#100908" stroke-width="6"/>
+  <text x="600" y="285" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="108" font-weight="800" fill="#100908" letter-spacing="-2">Zublo</text>
+  <path d="M 420 310 Q 600 300 780 310" stroke="#E57236" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <text x="600" y="390" text-anchor="middle" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="34" font-weight="500" fill="#100908" opacity="0.9">Websites, apps &amp; growth for LA businesses</text>
+</svg>

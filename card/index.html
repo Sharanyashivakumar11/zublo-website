@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F2ED">
+  <title>Zublo — Save & Share Contact</title>
+  <meta name="description" content="Save Zublo’s phone, email, and website to your contacts. Scan the QR code or share this digital business card.">
+  <link rel="canonical" href="https://zublo.co/card/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Keep in touch with Zublo">
+  <meta property="og:description" content="Save our contact details and choose your free Expo starter.">
+  <meta property="og:image" content="https://zublo.co/og-image.png">
+  <meta property="og:url" content="https://zublo.co/card/">
+  <link rel="stylesheet" href="/card/card.css?v=2">
+  <script src="/card/card.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <a href="/" class="logo" aria-label="Zublo home">Zublo<span></span></a>
+    <p class="eyebrow">YOUR DIGITAL BUSINESS CARD</p>
+    <h1>Let’s stay in touch.</h1>
+    <p class="intro">Websites, local SEO & marketing for small businesses.</p>
+    <a class="button primary" href="/small-business-expo/zublo.vcf" download="Zublo.vcf">Save Zublo to contacts <span aria-hidden="true">↓</span></a>
+    <p class="hint">Open the contact file, then choose Add Contact.</p>
+    <div class="actions">
+      <button class="button secondary" id="show-qr" type="button">Show my QR</button>
+      <button class="button secondary" id="share-card" type="button">Share contact link</button>
+    </div>
+    <p id="share-status" class="hint" role="status" aria-live="polite"></p>
+    <div class="details">
+      <a href="tel:+12132680491"><span>CALL</span>(213) 268-0491 <b aria-hidden="true">↗</b></a>
+      <a href="mailto:sharanya@zublo.co"><span>EMAIL</span>sharanya@zublo.co <b aria-hidden="true">↗</b></a>
+      <a href="https://zublo.co/"><span>WEBSITE</span>zublo.co <b aria-hidden="true">↗</b></a>
+    </div>
+    <a class="offer" href="https://calendly.com/sharanya-zublo/discovery-call-with-zublo"><span>MET AT THE EXPO?</span>Claim your free Expo starter <b aria-hidden="true">→</b></a>
+    <p class="hint permanent-link">Share anytime: <a href="https://zublo.co/card/">zublo.co/card</a></p>
+  </main>
+  <dialog id="qr-dialog" aria-labelledby="qr-title">
+    <button id="close-qr" class="close" aria-label="Close QR code" type="button">×</button>
+    <p class="eyebrow">POINT THEIR CAMERA HERE</p>
+    <h2 id="qr-title">Scan to save Zublo.</h2>
+    <img src="/card/contact-qr.svg" width="280" height="280" alt="Scan to open zublo.co/card and save Zublo’s contact details">
+    <p>Scan → open the link → tap <strong>Save to contacts.</strong></p>
+    <a href="https://zublo.co/card/" class="qr-url">zublo.co/card</a>
+    <a class="button secondary" href="/card/contact-qr.png" download="Zublo-Contact-QR.png">Download QR for my phone ↓</a>
+  </dialog>
+</body>
+</html>
