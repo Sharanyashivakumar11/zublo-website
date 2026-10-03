@@ -243,12 +243,7 @@ if (navDropdown) {
             if (isMobile()) {
                 e.preventDefault();
                 e.stopPropagation();
-                const isActive = navDropdown.classList.contains('active');
                 navDropdown.classList.toggle('active');
-                console.log('Services dropdown toggled. Active:', !isActive);
-                console.log('Dropdown menu element:', dropdownMenu);
-                console.log('Dropdown menu computed display:', window.getComputedStyle(dropdownMenu).display);
-                console.log('Nav dropdown classes:', navDropdown.className);
             }
         });
     }
@@ -280,12 +275,16 @@ if (navDropdown) {
         }
     }
     
+    let closeTimeout;
+
     function handleMouseEnter() {
+        clearTimeout(closeTimeout);
         navDropdown.classList.add('active');
     }
     
     function handleMouseLeave() {
-        navDropdown.classList.remove('active');
+        clearTimeout(closeTimeout);
+        closeTimeout = setTimeout(() => navDropdown.classList.remove('active'), 250);
     }
     
     // Set up hover on load
